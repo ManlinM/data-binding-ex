@@ -1,0 +1,35 @@
+
+<div class="container">
+<h2>The first component</h2>
+<p>{{ msg }}</p>
+<div [class.my-border]="addBorder" [style.width.px]="350">
+    <h3>Property Binding</h3>
+<p >If typed in following input, nothing changes, as its ONE WAY binding through property binding</p>
+<p>The msg3 is showing due to property binding</p>
+<input type="text" [value]="msg3" [style.width.px]="250">
+<p>{{msg3}}</p>
+</div>
+
+<br>
+<div [class.my-second-border]="addBorder" [style.width.px]="350">
+    <h3>Event Binding</h3>
+<p>If typed in the following input,the msg2 property, which is the property of comp, will be changed, as its using event binding</p>
+<p>Which is HTML to Typescript</p>
+<input type="text" (input)="onGenerateMsg($event)" [style.width.px]="250">
+<p>{{ msg2 }}</p>
+</div>
+<br>
+
+<div [class.my-third-border]="addBorder" [style.width.px]="350">
+    <h3>Two-Way-Binding</h3>
+<p>If typed in the following input, ALL changes, as its two way binding</p>
+<p>Both HTML -> TS && TS -> HTML</p>
+<p>The msg3 is showing in the input due to Two Way Binding</p>
+<input type="text" [(ngModel)]="msg3" [style.width.px]="250">
+<p>{{ msg3 }}</p>
+</div>
+
+
+<br>
+<button>Click Me</button>
+</div>
